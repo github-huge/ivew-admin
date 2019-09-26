@@ -74,7 +74,7 @@ export default [
         path: 'high_function',
         name: 'high_function',
         meta: {
-          icon: 'md-trending-up',
+          icon: '_qq',
           title: '高阶'
         },
         component: () => import('@/view/demo/highFunction.vue')
@@ -83,7 +83,7 @@ export default [
         path: 'drop_down_forEnterKey',
         name: 'drop_down_forEnterKey',
         meta: {
-          icon: 'md-trending-up',
+          icon: '_qq',
           title: '下拉列表键盘换行'
         },
         component: () => import('@/view/demo/dropdownForEnterKey.vue')
@@ -92,7 +92,7 @@ export default [
         path: 'Calendar',
         name: 'Calendar',
         meta: {
-          icon: 'md-trending-up',
+          icon: '_qq',
           title: '下拉列表键盘换行'
         },
         component: () => import('@/view/demo/Calendar.vue')
@@ -101,7 +101,7 @@ export default [
         path: 'formValidate',
         name: 'formValidate',
         meta: {
-          icon: 'md-trending-up',
+          icon: '_qq',
           title: 'formTable验证'
         },
         component: () => import('@/view/demo/formValidate.vue')
@@ -110,7 +110,7 @@ export default [
         path: 'form',
         name: 'form',
         meta: {
-          icon: 'md-trending-up',
+          icon: '_qq',
           title: 'formArr验证'
         },
         component: () => import('@/view/demo/form.vue')
@@ -181,15 +181,6 @@ export default [
           title: '可拖拽抽屉'
         },
         component: () => import('@/view/components/drag-drawer')
-      },
-      {
-        path: 'org_tree_page',
-        name: 'org_tree_page',
-        meta: {
-          icon: 'ios-people',
-          title: '组织结构树'
-        },
-        component: () => import('@/view/components/org-tree')
       },
       {
         path: 'tree_table_page',
