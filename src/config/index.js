@@ -1,4 +1,4 @@
-import config from './config'
+// import config from './config'
 export default {
   /**
    * @description 配置显示在浏览器标签的title
