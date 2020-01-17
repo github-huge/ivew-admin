@@ -126,7 +126,7 @@
                           .childNodes
                           .forEach(item => {
                             item.childNodes.forEach(item => {
-                              if (item.tagName == 'INPUT') {
+                              if (item.tagName === 'INPUT') {
                                 item.focus()
                               }
                             })

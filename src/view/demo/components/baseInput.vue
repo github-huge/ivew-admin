@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin: 0 10px">
     <label> {{ label }}
       <!--props传值-->
       <!--<input :value="value"-->
@@ -14,6 +14,12 @@
       <input :value="value" v-bind="$attrs" v-on="listeners">
       <!--二次优化-->
     </label>
+
+    <p class="computed">
+      <span>请输入名字</span>
+      <input type="text" v-model="name">
+      <span>computedName: {{computedName}}</span>
+    </p>
   </div>
 </template>
 
@@ -30,7 +36,8 @@
     },
     data() {
       return {
-        placeholder: '请输入keyword'
+        placeholder: '请输入keyword',
+        name: 'jake'
       }
     },
     computed: {
@@ -40,10 +47,15 @@
           input: event => this.$emit('input', event.target.value),
           inheritAttrs: false
         }
+      },
+      computedName() {
+        return this.name
       }
     },
     methods: {
-      focus() {},
+      focus() {
+        console.log('ml')
+      },
       input() {
 
       }
@@ -51,6 +63,8 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+.computed{
+  margin: 0 20px ;
+}
 </style>

@@ -51,5 +51,5 @@ export default {
   high_function: 'high_function',
   form: 'form',
   formValidate: 'renderMap',
-  render_map: 'renderMap'
+  renderless: 'renderless'
 }

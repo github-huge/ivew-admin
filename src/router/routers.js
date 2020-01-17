@@ -1,6 +1,5 @@
 import Main from '@/components/main'
 import parentView from '@/components/parent-view'
-
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
  * meta: {
@@ -16,8 +15,29 @@ import parentView from '@/components/parent-view'
  *  beforeCloseName: (-) 设置该字段，则在关闭当前tab页时会去'@/router/before-close.js'里寻找该字段名对应的方法，作为关闭前的钩子函数
  * }
  */
-
 export default [
+  {
+    path: '/demo',
+    name: 'demo',
+    redirect: '/chat',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '数据上传'
+    },
+    component: Main,
+    children: [
+      {
+        path: '/chat',
+        name: 'chat',
+        meta: {
+          icon: 'ios-document',
+          title: '微信聊天'
+        },
+        component: () => import('@/view/demo/chat/chat.vue')
+      }
+    ]
+  },
+
   {
     path: '/login',
     name: 'login',
@@ -47,73 +67,6 @@ export default [
           icon: 'md-home'
         },
         component: () => import('@/view/single-page/home')
-      }
-    ]
-  },
-  {
-    path: '/demo',
-    name: 'demo',
-    meta: {
-      icon: 'logo-buffer',
-      title: '我的workDemo',
-      notCache: true,
-      hideInBread: true
-    },
-    component: Main,
-    children: [
-      {
-        path: 'render_map',
-        name: 'render_map',
-        meta: {
-          icon: '_qq',
-          title: 'render函数循环'
-        },
-        component: () => import('@/view/demo/render-map.vue')
-      },
-      {
-        path: 'high_function',
-        name: 'high_function',
-        meta: {
-          icon: '_qq',
-          title: '高阶'
-        },
-        component: () => import('@/view/demo/highFunction.vue')
-      },
-      {
-        path: 'drop_down_forEnterKey',
-        name: 'drop_down_forEnterKey',
-        meta: {
-          icon: '_qq',
-          title: '下拉列表键盘换行'
-        },
-        component: () => import('@/view/demo/dropdownForEnterKey.vue')
-      },
-      {
-        path: 'Calendar',
-        name: 'Calendar',
-        meta: {
-          icon: '_qq',
-          title: '下拉列表键盘换行'
-        },
-        component: () => import('@/view/demo/Calendar.vue')
-      },
-      {
-        path: 'formValidate',
-        name: 'formValidate',
-        meta: {
-          icon: '_qq',
-          title: 'formTable验证'
-        },
-        component: () => import('@/view/demo/formValidate.vue')
-      },
-      {
-        path: 'form',
-        name: 'form',
-        meta: {
-          icon: '_qq',
-          title: 'formArr验证'
-        },
-        component: () => import('@/view/demo/form.vue')
       }
     ]
   },
@@ -438,7 +391,8 @@ export default [
               icon: 'md-funnel',
               title: '三级'
             },
-            component: () => import('@/view/multilevel/level-2-2/level-2-2-1.vue')
+            component: () =>
+              import('@/view/multilevel/level-2-2/level-2-2-1.vue')
           },
           {
             path: 'level_2_2_2',
@@ -447,7 +401,8 @@ export default [
               icon: 'md-funnel',
               title: '三级'
             },
-            component: () => import('@/view/multilevel/level-2-2/level-2-2-2.vue')
+            component: () =>
+              import('@/view/multilevel/level-2-2/level-2-2-2.vue')
           }
         ]
       },
